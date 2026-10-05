@@ -1,0 +1,436 @@
+/* ==========================================
+COVER SECTION & BACKGROUND
+============================================= */
+.section-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,0.18),rgba(0,0,0,0.28)), url("cover.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ============================================
+CONTENT BOX 
+=============================================== */
+/* ---- Position ---- */
+.content-box-bottom {
+  position: relative;
+  z-index: 10;
+  width: min(92%,480px);
+  margin-bottom: clamp(40px, 8vh, 70px);
+  padding: 
+    clamp(30px, 4vw, 45px)
+    clamp(24px, 5vw, 35px);
+  background: none;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ---- Reveal Animation ---- */
+@keyframes revealContentBox {
+  0% {
+    opacity: 0;
+    transform:
+      translateY(30px)
+      scale(0.96);
+    filter: blur(4px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ---- Trigger Animation ---- */
+#coverPage.show .content-box-bottom {
+  animation: revealContentBox 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+/* =============================================
+SUBTITLE 
+================================================ */
+.sub-title {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  letter-spacing: clamp(2px, 0.6vw, 4px);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 14px;
+}
+
+/* ==============================================
+MAIN TITLE 
+================================================= */
+.main-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(3rem, 8vw, 4rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.main-title .ampersand {
+  display: block;
+  font-size: clamp(2.2rem, 6vw, 2.8rem);
+  color: rgba(255, 255, 255, .755);
+  margin: 0.3rem 0;
+}
+
+/* =================================================
+GUEST BOX 
+==================================================== */
+.guest-box {
+  margin: clamp(24px, 5vw, 35px) 0;
+}
+
+.guest-label {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.guest-name {
+  display: inline-block;
+  padding: 
+    clamp(10px, 2.2vw, 12px)
+    clamp(18px, 5vw, 22px);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+/* ======================================================
+ OPEN BUTTON 
+========================================================= */
+.btn-open-wedding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffc2d1, #ffe5ec);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(232,190,232,0.75);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.btn-open-wedding:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(232,190,232,0.95);
+}
+
+.btn-open-wedding:active {
+  transform: translateY(0);
+}
+
+.btn-open-wedding i {
+  font-size: 1rem;
+}
+
+/* ======================================================
+STATE ANIMATION COVER ITEM
+========================================================= */
+.sub-title,
+.main-title,
+.guest-box,
+.btn-open-wedding {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* ---- Reveal Animation ---- */
+@keyframes revealCoverItem {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Trigger Animation ---- */
+/* Subtitle */
+#coverPage.show .sub-title {
+  animation:
+    revealCoverItem .8s cubic-bezier(.22, 1, .36, 1) .15s forwards;
+}
+
+/* Nama */
+#coverPage.show .main-title {
+  animation:
+    revealCoverItem .9s cubic-bezier(.22, 1, .36, 1) .30s forwards;
+}
+
+/* Guest */
+#coverPage.show .guest-box {
+  animation:
+    revealCoverItem .8s cubic-bezier(.22, 1, .36, 1) .50s forwards;
+}
+
+/* Button */
+#coverPage.show .btn-open-wedding {
+  animation:
+    revealCoverItem .8s cubic-bezier(.22, 1, .36, 1) .70s forwards;
+}
+
+/* ==========================================
+   BUTTERFLY VIDEO OVERLAY
+========================================== */
+.butterfly-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ==========================================
+   BUTTERFLY OVERLAY
+========================================== */
+.butterfly-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ==========================================
+   BUTTERFLY BASE
+========================================== */
+.butterfly {
+  position: absolute;
+  display: block;
+  width: 58px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+/* ==========================================
+   BUTTERFLY 1
+========================================== */
+.butterfly-1 {
+  left: 16%;
+  bottom: 14%;
+  width: 90px;
+  animation:
+    butterflyFly1 8s ease-in-out 1s infinite;
+}
+
+/* ==========================================
+   BUTTERFLY 2
+========================================== */
+.butterfly-2 {
+  left: 78%;
+  bottom: 24%;
+  width: 90px;
+  animation:
+    butterflyFly2 9s ease-in-out 3s infinite;
+}
+
+/* ==========================================
+  BUTTERFLY 3
+============================================= */
+.butterfly-3 {
+  left: 24%;
+  top: 10%;
+  width: 85px;
+  animation: butterflyFly1 10s ease-in-out 4.5s infinite;
+}
+
+/* =========================================
+  BUTTERFLY 4
+============================================ */
+.butterfly-4 {
+  left: 86%;
+  top: 20%;
+  width: 80px;
+  animation: butterflyFly2 8.5s ease-in-out 6s infinite;
+}
+
+/* ===========================================
+  BUTTERFLY 5
+============================================== */
+.butterfly-5 {
+  left: 18%;
+  bottom: 40%;
+  width: 95px;
+  animation: butterflyFly1 17s ease-in-out 7.5s infinite;
+}
+
+
+/* ==========================================
+  BUTTERFLY 6
+============================================= */
+.butterfly-6 {
+  left: 80%;
+  bottom: 45%;
+  width: 75px;
+  animation: butterflyFly2 16s ease-in-out 8.5s infinite;
+}
+
+/* ==========================================
+   LINTASAN BUTTERFLY 1
+========================================== */
+@keyframes butterflyFly1 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(-20px, 35px)
+      rotateY(180deg)
+      rotate(-8deg)
+      scale(.78);
+  }
+
+  10% {
+    opacity: .95;
+  }
+
+  25% {
+    transform:
+      translate(45px, -5px)
+      rotateY(180deg)
+      rotate(5deg)
+      scale(.92);
+  }
+
+  45% {
+    transform:
+      translate(110px, -40px)
+      rotateY(180deg)
+      rotate(-5deg)
+      scale(1);
+  }
+
+  65% {
+    transform:
+      translate(180px, -15px)
+      rotateY(180deg)
+      rotate(7deg)
+      scale(.95);
+  }
+
+  82% {
+    transform:
+      translate(245px, -65px)
+      rotateY(180deg)
+      rotate(-4deg)
+      scale(.88);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(320px, -115px)
+      rotateY(180deg)
+      rotate(7deg)
+      scale(.76);
+  }
+}
+
+/* ==========================================
+   LINTASAN BUTTERFLY 2
+========================================== */
+@keyframes butterflyFly2 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(20px, -20px)
+      rotate(7deg)
+      scale(.78);
+  }
+
+  10% {
+    opacity: .95;
+  }
+
+  28% {
+    transform:
+      translate(-45px, 15px)
+      rotate(-5deg)
+      scale(.92);
+  }
+
+  48% {
+    transform:
+      translate(-115px, -30px)
+      rotate(5deg)
+      scale(1);
+  }
+
+  68% {
+    transform:
+      translate(-180px, -5px)
+      rotate(-7deg)
+      scale(.94);
+  }
+
+  84% {
+    transform:
+      translate(-245px, -65px)
+      rotate(4deg)
+      scale(.86);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-330px, -115px)
+      rotate(-7deg)
+      scale(.74);
+  }
+}
+
+/* =======================================================
+HIDE COVER 
+========================================================== */
+#coverPage {
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#coverPage.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

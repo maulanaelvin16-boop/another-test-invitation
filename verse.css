@@ -1,0 +1,109 @@
+/* ==============================================
+   VERSE SECTION
+================================================= */
+/* ---- Section ---- */
+.verse-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    padding: max(5px, env(safe-area-inset-top))
+             35px
+             max(5px, env(safe-area-inset-bottom));
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* ---- Background ---- */
+.verse-background {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            rgba(255, 225, 235, 0.88),
+            rgba(240, 214, 220, 0.90)
+        ),
+        url("background1.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+
+/* ---- Overlay ---- */
+.verse-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.26),
+            rgba(255, 255, 255, 0.08)
+        );
+    z-index: 1;
+}
+
+
+/* ---- Content ---- */
+.verse-content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-10px);
+}
+
+
+/* ---- Soft Glow ---- */
+.verse-content::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(125, 80, 95, 0.15);
+    filter: blur(45px);
+    z-index: -1;
+}
+
+
+/* ---- Monogram ---- */
+.verse-monogram {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+    margin-left: -30px;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+
+/* ---- Verse Text ---- */
+.verse-text {
+    max-width: 650px;
+    margin: 0 0 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: var(--primary);
+}
+
+
+/* ---- Reference ---- */
+.verse-reference {
+    margin: 1px 0 0;
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+}

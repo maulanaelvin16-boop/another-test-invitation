@@ -1,0 +1,582 @@
+/* =================================
+SECTION BACKGROUND
+==================================== */
+.gift-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+    padding: 90px 0;
+    background:
+        linear-gradient(
+            #efd8d9,
+            #e6c6c8
+        );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gift-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+/* =======================================
+GIFT PANEL
+========================================== */
+.gift-panel {
+    margin-top: 40px;
+    padding: 44px 30px;
+    border-radius: 32px;
+    background:
+        url("giftbg.jpeg");
+    border: 2px solid rgba(191, 154, 95, 0.45);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 6px rgba(255, 255, 255, 0.55);
+    position: relative;
+}
+
+.gift-panel::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(191, 154, 95, 0.55);
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+/* =================================
+SECTION HEADING
+==================================== */
+.gift-section .section-subtitle {
+    margin-top: 35px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Pinyon Script", cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--gold);
+}
+
+.gift-section .section-title {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--primary);
+}
+
+.gift-section .section-description {
+    max-width: 540px;
+    margin: 18px auto 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-light);
+}
+
+.gift-wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition:
+        max-height 0.75s ease,
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.gift-wrapper.active {
+  max-height: 2500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gift-wrapper.active .gift-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =================================
+BANK CARD
+==================================== */
+.gift-card {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 620px;
+    min-height: 170px;
+    margin: auto;
+    padding: 22px 34px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 255, 255, 0.78)
+        ),
+        url("cardbank.webp");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    opacity: 0;
+    text-align: center;
+    transform: translateY(25px);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.gift-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.35),
+            transparent
+        );
+    pointer-events: none;
+}
+
+.gift-card::after {
+    content: "";
+    opacity: 0.65;
+    position: absolute;
+    top: -80%;
+    left: -45%;
+    width: 45%;
+    height: 240%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 35%,
+        rgba(255, 255, 255, 0.30) 50%,
+        rgba(255, 255, 255, 0.08) 65%,
+        transparent 100%
+    );
+    transform: translateX(-220%) rotate(18deg);
+    pointer-events: none;
+    animation: giftShimmer 5s linear infinite;
+}
+
+/* ---- Animation ---- */
+@keyframes giftShimmer {
+    0% {
+        transform: translateX(-260%) rotate(18deg);
+        opacity: 0;
+    }
+    3% {
+        opacity: 0.65;
+    }
+    24% {
+        transform: translateX(320%) rotate(18deg);
+        opacity: 0.65;
+    }
+    28% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(320%) rotate(18deg);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+BANK INFORMATION
+============================================ */
+.bank-logo {
+    width: 45px;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bank-owner {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    color: var(--text-light);
+}
+
+.bank-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 11px;
+    color: var(--primary);
+}
+
+/* ====================================
+ADDRESS
+======================================= */
+.gift-address {
+    height: 470px;
+    min-height: 260px;
+}
+
+.gift-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+    color: var(--gold);
+}
+
+.gift-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.address-title {
+    font-family: "Cinzel", serif;
+    font-size: 1.15rem;
+    color: var(--primary);
+    margin-bottom: 9px;
+}
+
+.address-box {
+    width: 100%;
+    max-width: 430px;
+    margin: 14px auto 18px;
+    text-align: left;
+}
+
+.address-group {
+    margin-bottom: 18px;
+}
+
+.address-label {
+    font-family: "Cinzel", serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.address-line {
+    width: 70px;
+    height: 2px;
+    margin: 6px 0 10px;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #d8bc7a,
+        #b8944e
+    );
+}
+
+.address-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.address-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* ====================================
+DIVIDER
+======================================= */
+.gift-divider {
+    width: 180px;
+    margin: -4px auto 5px;
+    position: relative;
+}
+
+.gift-divider::before,
+.gift-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background: #c7a96d;
+}
+
+.gift-divider::before {
+    left: 0;
+}
+
+.gift-divider::after {
+    right: 0;
+}
+
+.gift-divider span {
+    color: #c7a96d;
+    font-size: .8rem;
+}
+
+/* ====================================
+DELAY REVEAL CARD
+======================================= */
+.gift-card:nth-child(1) {
+    transition-delay: 0.08s;
+}
+
+.gift-card:nth-child(2) {
+    transition-delay: 0.20s;
+}
+
+.gift-card:nth-child(3) {
+    transition-delay: 0.32s;
+}
+
+.gift-card:nth-child(4) {
+    transition-delay: 0.44s;
+}
+
+.gift-card:nth-child(5) {
+    transition-delay: 0.56s;
+}
+
+.gift-card:nth-child(1)::after {
+    animation-delay: 0s;
+}
+
+.gift-card:nth-child(2)::after {
+    animation-delay: 1.8s;
+}
+
+.gift-card:nth-child(3)::after {
+    animation-delay: 3.6s;
+}
+
+.gift-card:nth-child(4)::after {
+    animation-delay: 5.4s;
+}
+
+.gift-card:nth-child(5)::after {
+    animation-delay: 7.2s;
+}
+
+/* ===============================
+ORNAMENT CORNER
+================================= */
+.gift-corner {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    pointer-events: none;
+    z-index: 3;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.gift-corner-left {
+    opacity: 0.5;
+    top: -1px;
+    left: -1px;
+    background-image: url("corner2.webp");
+}
+
+
+.gift-corner-right {
+    opacity: 0.5;
+    bottom: -1px;
+    right: -1px;
+    background-image: url("corner1.webp");
+}
+
+/* =================================
+GIFT BUTTON
+==================================== */
+.gift-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 16px 34px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff;
+    background:
+        linear-gradient(
+            180deg,
+            #b37b86 0%,
+            #9e6672 100%
+        );
+    box-shadow:
+        0 12px 28px rgba(158, 102, 114, 0.30);
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+}
+
+.gift-toggle:hover {
+    transform:
+        translateY(-3px);
+    filter: brightness(1.05);
+    box-shadow:
+        0 18px 36px rgba(158, 102, 114, 0.40);
+}
+
+.gift-toggle:active {
+    transform:
+        scale(0.97);
+}
+
+.gift-toggle:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =================================
+CLOSE BUTTON BOTTOM
+==================================== */
+.gift-bottom-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.gift-close {
+    display: none;
+    margin: 30px auto 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: "Montserrat",sans-serif;
+    font-size: 0.9rem;
+    font-weight :600;
+    color: #fff;
+    background:
+    linear-gradient(
+        180deg,
+        #b37b86,
+        #9e6672
+    );
+    box-shadow:
+    0 10px 24px rgba(158, 102, 114, 0.28);
+    transition: 
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.gift-close:hover {
+    transform: translateY(-2px);
+}
+
+.gift-close:active {
+    transform: scale(0.98);
+}
+
+/* =================================
+COPY BUTTON
+==================================== */
+.copy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: "Montserrat",sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #fff;
+    white-space: nowrap;
+    background:
+        linear-gradient(
+            180deg,
+            #b37b86,
+            #9e6672
+        );
+    box-shadow:
+        0 10px 22px rgba(158, 102, 114, 0.28);
+    transition:
+        width 0.35s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease,
+        background 0.3s ease;
+}
+
+.copy-button.success {
+    width: 135px;
+    background:
+        linear-gradient(
+            180deg,
+            #74b87b,
+            #5ca665
+        );
+}
+
+.copy-button:hover {
+    transform:
+        translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow:
+        0 16px 30px rgba(158, 102, 114, 0.38);
+}
+
+.copy-button:active {
+    transform:
+        scale(0.97);
+}
+
+.copy-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+.bank-card .copy-button {
+    width: 95px;
+    height: 42px;
+    padding: 8px 18px;
+}
+
+.bank-card .copy-button.success {
+    width: 135px;
+}
+
+.address-button {
+    width: 120px;
+    height: 48px;
+    padding: 10px 22px;
+}

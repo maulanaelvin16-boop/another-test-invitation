@@ -1,0 +1,801 @@
+/* ==========================================
+0px - 991px
+========================================== */
+@media (max-width: 991px) {
+  /* =============================
+  MAIN LAYOUT TABLET
+  ============================= */
+  .main-wrapper {
+    display: block;
+  }
+
+  .left-side {
+    display: none;
+  }
+
+  .right-side {
+    width: 100%;
+    height: auto;
+    flex: none;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: flex-start;
+    background: #f5f5f5;
+  }
+
+  .invitation-canvas {
+    width: 100%;
+    max-width: 680px;
+    min-height: 100dvh;
+    margin: 0 auto;
+  }
+
+  /* =============================
+  HERO SECTION TABLET
+  ============================= */
+  .hero-scene {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .wedding-of-text {
+    font-size: clamp(.72rem, 2.4vw, .9rem);
+    letter-spacing: clamp(2.5px, 1vw, 4px);
+    margin-bottom: 20px;
+  }
+
+  .name-text {
+    font-size: clamp(3.4rem, 10vw, 4.5rem);
+  }
+
+  .ampersand-main {
+    font-size: clamp(3.4rem, 10vw, 4.5rem);
+  }
+
+  .date-text {
+    font-size: clamp(.9rem, 3vw, 1.2rem);
+  }
+
+  /* ---- Hero Ornament ---- */
+  .border-ornament {
+    width: 76%;
+    max-width: 520px;
+  }
+
+  .flower-left,
+  .flower-right {
+    width: 74%;
+    max-width: 520px;
+    bottom: -4%;
+  }
+
+  .flower-center,
+  .flower-center-second {
+    width: 62%;
+    max-width: 500px;
+    bottom: -16%;
+  }
+
+  .flower-middle-left,
+  .flower-middle-right {
+    width: 68%;
+    max-width: 470px;
+    top: 59%;
+  }
+
+  .flower-middle-left {
+    left: -22%;
+  }
+
+  .flower-middle-right {
+    right: 44%;
+  }
+
+  .flower-middle-left-upper,
+  .flower-middle-right-upper {
+    width: 70%;
+    max-width: 520px;
+    top: 23%;
+  }
+
+  .flower-middle-left-upper {
+    left: 40%;
+  }
+
+  .flower-middle-right-upper {
+    right: -30%;
+  }
+
+  .fountain-ornament {
+    width: 45%;
+    max-width: 310px;
+    bottom: 5%;
+    left: 50%;
+  }
+
+  /* =============================
+  VERSE SECTION TABLET
+  ============================= */
+  .verse-section {
+    min-height: auto;
+    padding: 70px 22px;
+  }
+
+  .verse-content {
+    width: 100%;
+    max-width: 680px;
+    transform: translateY(-10px);
+  }
+
+  .verse-monogram {
+    width: 110px;
+    max-width: 110px;
+    margin-bottom: 30px;
+  }
+
+  .verse-text {
+    max-width: 620px;
+    font-size: clamp(.72rem, 2.2vw, 1rem);
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .verse-reference {
+    font-size: clamp(.68rem, 2.2vw, 1rem);
+    letter-spacing: clamp(2px, 1vw, 5px);
+  }
+
+  /* =============================
+  COUPLE SECTION TABLET
+  ============================= */
+  .couple-section {
+    padding:
+      max(60px, env(safe-area-inset-top))
+      22px
+      max(100px, env(safe-area-inset-bottom));
+  }
+
+  .couple-content {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .couple-heading {
+    margin-bottom: 38px;
+  }
+
+  .couple-title {
+    font-size: 3.2rem;
+  }
+
+  .couple-subtitle {
+    max-width: 520px;
+    font-size: .82rem;
+  }
+
+  .person-photo {
+    width: 210px;
+    height: 300px;
+  }
+
+  .photo-frame {
+    margin-bottom: 26px;
+  }
+
+  .person-name {
+    font-size: 2rem;
+  }
+
+  .person-description {
+    max-width: 420px;
+    font-size: .9rem;
+    line-height: 1.9;
+  }
+
+  .couple-divider {
+    margin: 55px 0;
+    font-size: 2rem;
+  }
+
+  /* ---- Couple Ornament ---- */
+  .couple-section .flower-left {
+    width: 55%;
+    left: -12%;
+    bottom: -5%;
+  }
+
+  .couple-section .flower-right {
+    width: 55%;
+    right: 43%;
+    bottom: -5%;
+  }
+
+  .couple-section .flower-center {
+    width: 45%;
+    bottom: -11%;
+    left: 57%;
+  }
+
+  .couple-section .flower-center-second {
+    width: 45%;
+    bottom: -11%;
+    left: 51%;
+  }
+
+  .couple-section .flower-middle-left {
+    width: 57%;
+    top: 42%;
+  }
+
+  .couple-section .flower-middle-right {
+    width: 57%;
+  }
+
+  .couple-section .flower-middle-left-upper {
+    width: 62%;
+  }
+
+  .couple-section .flower-middle-right-upper {
+    width: 62%;
+    top: 15%;
+    right: -37%;
+  }
+
+  /* =============================
+  EVENT SECTION TABLET
+  ============================= */
+  .event-section {
+    padding:
+      max(40px, env(safe-area-inset-top))
+      22px
+      max(60px, env(safe-area-inset-bottom));
+  }
+
+  .event-section .container {
+    max-width: 680px;
+    margin: auto;
+  }
+
+  .event-section .section-subtitle {
+    font-size: 3.8rem;
+  }
+
+  .event-section .section-title {
+    font-size: 1.45rem;
+  }
+
+  /* Countdown */
+  .countdown-wrapper {
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .count-card {
+    width: 76px;
+    height: 68px;
+    flex-basis: 76px;
+  }
+
+  .event-section .countdown-date {
+    font-size: 1.1rem;
+  }
+
+  .event-section .section-description {
+    max-width: 540px;
+    font-size: 1rem;
+  }
+
+  /* Event Card */
+  .event-card {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 42px 36px;
+  }
+
+  .event-card .event-title {
+    font-size: 2.3rem;
+  }
+
+  .event-divider {
+    width: 360px;
+    left: -1%;
+  }
+
+  .event-card .event-date {
+    font-size: 1.08rem;
+  }
+
+  .event-card .event-time {
+    font-size: 1.45rem;
+  }
+
+  .event-card .event-location {
+    font-size: 1.05rem;
+  }
+
+  .map-button {
+    min-width: 200px;
+    padding: 16px 38px;
+    font-size: 1rem;
+  }
+
+  /* =============================
+  GALLERY TABLET
+  ============================= */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .gallery-item {
+    border-radius: 20px;
+  }
+
+  .gallery-item.landscape {
+    grid-column: span 2;
+  }
+
+  /* =============================
+  GIFT TABLET
+  ============================= */
+  .gift-card {
+    max-width: 420px;
+  }
+
+  /* =============================
+  THANK YOU TABLET
+  ============================= */
+  .thankyou-section {
+    padding: 90px 22px;
+    min-height: 520px;
+    background-position: center center;
+  }
+
+  .thankyou-section .container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .closing-panel {
+    width: min(450px, 100%);
+  }
+
+  .thankyou-section p {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .thankyou-section h2 {
+    font-size: 5rem;
+  }
+
+  .closing-flower-left {
+    width: 74%;
+    max-width: 520px;
+    left: -28%;
+    z-index: 3;
+  }
+
+  .closing-flower-right {
+    width: 74%;
+    max-width: 520px;
+    right: 46%;
+    z-index: 3;
+  }
+
+  .closing-flower-bottom-left {
+    width: 62%;
+    max-width: 500px;
+    left: 2%;
+    bottom: -22%;
+  }
+
+  .closing-flower-bottom-right {
+    width: 62%;
+    max-width: 500px;
+    right: 4%;
+    bottom: -22%;
+  }
+
+  .closing-flower-middle-left {
+    width: 68%;
+    max-width: 470px;
+    top: 55%;
+    left: -22%;
+    z-index: 2;
+  }
+
+  .closing-flower-middle-right {
+    width: 68%;
+    max-width: 470px;
+    top: 55%;
+    right: 45%;
+    z-index: 2;
+  }
+
+  .closing-flower-middle-left-upper {
+    width: 60%;
+    max-width: 520px;
+    top: 23%;
+    left: 36%;
+    z-index: 1;
+  }
+
+  .closing-flower-middle-right-upper {
+    width: 60%;
+    max-width: 520px;
+    top: 23%;
+    right: -24%;
+    z-index: 1;
+  }
+}
+
+
+/* ==========================================
+0px - 767px
+========================================== */
+@media (max-width: 767px) {
+  
+  /* =============================
+  SECTION HEADING MOBILE
+  ============================= */
+  .section-subtitle {
+    font-size: clamp(2.5rem, 11vw, 3.2rem);
+    line-height: 1;
+  }
+
+  .section-title {
+    font-size: clamp(1.15rem, 5vw, 1.45rem);
+    line-height: 1.3;
+  }
+
+  .section-description {
+    font-size: .88rem;
+    line-height: 1.8;
+  }
+
+  /* =============================
+  LOADER MOBILE
+  ============================= */
+  .loader-content {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .initial-container {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .loader-monogram {
+    width: min(35vw, 90px);
+    margin-left: -30px;
+  }
+
+  .loader-name {
+    font-size: clamp(.72rem, 2.8vw, .9rem);
+    letter-spacing: clamp(2px, 1vw, 4px);
+    margin-top: -15px;
+  }
+
+  /* =============================
+  HERO MOBILE
+  ============================= */
+  .main-text-content {
+    width: 90%;
+    top: 49%;
+  }
+
+  .wedding-of-text {
+    font-size: .7rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 6px;
+  }
+
+  .name-text {
+    font-size: 2.7rem;
+    line-height: .95;
+  }
+
+  .ampersand-main {
+    font-size: 3.5rem;
+    margin: .15rem 0;
+  }
+
+  .date-text {
+    margin-top: 22px;
+    font-size: .85rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* =============================
+  VERSE MOBILE
+  ============================= */
+  .verse-section {
+    padding: 50px 18px;
+  }
+
+  .verse-content {
+    transform: translateY(-5px);
+  }
+
+  .verse-monogram {
+    width: min(80px, 55vw);
+    max-width: 80px;
+    margin-bottom: 18px;
+  }
+
+  .verse-text {
+    max-width: 350px;
+    margin-bottom: 14px;
+    font-size: .72rem;
+    line-height: 1.8;
+  }
+
+  .verse-reference {
+    font-size: .68rem;
+    letter-spacing: 2.5px;
+  }
+
+  /* =============================
+  COUPLE MOBILE
+  ============================= */
+  .couple-heading {
+    margin-bottom: 32px;
+  }
+
+  .couple-title {
+    font-size: 3.4rem;
+  }
+
+  .couple-subtitle {
+    max-width: 340px;
+    font-size: .75rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+
+  .photo-frame {
+    padding: 5px;
+    margin-bottom: 22px;
+    border-radius: 21px;
+  }
+
+  .photo-frame::before {
+    inset: 5px;
+    border-radius: 15px;
+  }
+
+  .person-photo {
+    width: min(200px, 70vw);
+    height: min(285px, 102vw);
+    border-radius: 14px;
+  }
+
+  .person-name {
+    margin-top: 8px;
+    margin-bottom: 14px;
+    font-size: 1.85rem;
+  }
+
+  .person-description {
+    max-width: 310px;
+    font-size: .82rem;
+    line-height: 1.85;
+  }
+
+  .person-instagram {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+  }
+
+  .couple-divider {
+    margin: 45px 0;
+    font-size: 1.8rem;
+  }
+
+  /* Couple Ornament */
+  .couple-section .flower-left,
+  .couple-section .flower-right {
+    bottom: -5%;
+  }
+
+  .couple-section .flower-center,
+  .couple-section .flower-center-second {
+    bottom: -8%;
+  }
+
+
+  /* =============================
+  EVENT MOBILE
+  ============================= */
+  .event-section {
+    padding:
+      max(30px, env(safe-area-inset-top))
+      18px
+      max(60px, env(safe-area-inset-bottom));
+  }
+
+  .event-section .section-subtitle {
+    font-size: clamp(2.8rem, 12vw, 3.4rem);
+  }
+
+  /* Countdown */
+  .countdown-wrapper {
+    gap: clamp(5px, 2vw, 8px);
+    margin-top: 2.2rem;
+  }
+
+  .count-card {
+    width: clamp(62px, 18vw, 72px);
+    height: clamp(60px, 17vw, 66px);
+    flex: 1 1 0;
+    max-width: 72px;
+  }
+
+  .count-number {
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
+  }
+
+  .count-card span {
+    font-size: clamp(.68rem, 2.8vw, .8rem);
+    letter-spacing: .6px;
+  }
+
+  .event-section .countdown-date {
+    font-size: clamp(.95rem, 4vw, 1.1rem);
+  }
+
+  .event-section .section-description {
+    font-size: .9rem;
+    line-height: 1.8;
+  }
+
+  /* Event Card */
+  .event-card {
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 34px 22px;
+  }
+
+  .event-card .event-title {
+    font-size: clamp(1.9rem, 8vw, 2.3rem);
+  }
+
+  .event-card .event-date {
+    font-size: 1rem;
+  }
+
+  .event-card .event-time {
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
+  }
+
+  .event-card .event-location {
+    font-size: .95rem;
+  }
+
+  .event-divider {
+    width: 80%;
+    max-width: 360px;
+  }
+
+  /* =============================
+  GIFT MOBILE
+  ============================= */
+  .gift-section {
+    padding-top: 60px;
+  }
+
+  .gift-panel {
+    padding: 34px 18px;
+  }
+
+  .gift-panel::before {
+    inset: 10px;
+  }
+
+  .gift-card {
+    max-width: 100%;
+    padding: 18px 20px;
+  }
+
+  .bank-number {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .gift-corner {
+    width: 72px;
+    height: 72px;
+  }
+
+  .gift-address {
+    min-height: 430px;
+    height: auto;
+  }
+
+  .gift-toggle,
+  .gift-close {
+    padding: 14px 28px;
+    font-size: .88rem;
+  }
+
+  .bank-card .copy-button {
+    width: 95px;
+    height: 42px;
+  }
+
+  .address-button {
+    width: 120px;
+    height: 48px;
+  }
+
+  .bank-card .copy-button.success {
+    width: 135px;
+  }
+
+  /* =============================
+  RSVP MOBILE
+  ============================= */
+  .rsvp-section .section-subtitle {
+    font-size: clamp(2.5rem, 11vw, 3rem);
+  }
+
+  .rsvp-section .section-title {
+    font-size: clamp(1.35rem, 5.5vw, 2rem);
+  }
+
+  .rsvp-section .section-description {
+    font-size: .88rem;
+    line-height: 1.8;
+  }
+
+  /* =============================
+  WISHES MOBILE
+  ============================= */
+  .wishes-section .section-subtitle {
+    font-size: clamp(2.5rem, 11vw, 3rem);
+  }
+
+  .wishes-section .section-title {
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+  }
+
+  .wishes-section .section-description {
+    font-size: .88rem;
+    line-height: 1.8;
+  }
+
+  /* =============================
+  THANK YOU MOBILE
+  ============================= */
+  .thankyou-section {
+    padding: 70px 18px;
+    min-height: 460px;
+  }
+
+  .thankyou-section p {
+    max-width: 480px;
+    font-size: clamp(.85rem, 3.8vw, .95rem);
+    line-height: 1.8;
+  }
+
+  .thankyou-section h2 {
+    font-size: clamp(1.45rem, 6vw, 1.65rem);
+  }
+
+  /* ---- Closing Ornament ---- */
+  .closing-flower-bottom-left,
+  .closing-flower-bottom-right {
+    width: 62%;
+    bottom: -11%;
+  }
+}

@@ -1,0 +1,284 @@
+/* =========================================
+EVENT SECTION
+========================================= */
+.event-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+    padding:
+        max(40px, env(safe-area-inset-top))
+        35px
+        max(70px, env(safe-area-inset-bottom));
+    background: #f3dce0;
+}
+
+.event-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(255, 255, 255, 0.38),
+            transparent 52%
+        );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* =========================================
+BACKGROUND
+========================================= */
+.event-background {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            rgba(243, 220, 224, 0.82),
+            rgba(249, 238, 236, 0.84)
+        ),
+        url("eventbg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* =========================================
+OVERLAY
+========================================= */
+.event-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.24),
+            rgba(255, 255, 255, 0.08)
+        );
+    z-index: 1;
+}
+
+/* =========================================
+CONTAINER
+========================================= */
+.event-section .container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* =========================================
+EVENT WRAPPER
+========================================= */
+.event-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 36px;
+}
+
+/* =========================================
+SECTION HEADING
+========================================= */
+.event-section .section-subtitle {
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    font-family: "Pinyon Script", cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: var(--gold);
+}
+
+.event-section .section-title {
+    margin: 0;
+    font-family: "Cinzel",serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--primary);
+}
+
+.event-section .countdown-date {
+    margin: 18px 0 1rem;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color :var(--primary);
+}
+
+.event-section .section-description {
+    max-width: 520px;
+    margin: 16px auto 0;
+    font-family: "Montserrat",sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-light);
+}
+
+/* =========================================
+EVENT CARD
+========================================= */
+.event-card {
+    position: relative;
+    width: 100%;
+    max-width: 610px;
+    overflow: hidden;
+    padding: 34px 30px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================
+CARD BACKGROUND
+========================================= */
+.event-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        url("cardbg.jpeg")
+        center/cover
+        no-repeat;
+    opacity: .45;
+    pointer-events: none;
+}
+
+.event-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.28),
+        rgba(255, 255, 255, 0.12)
+    );
+    pointer-events: none;
+}
+
+.event-card * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+EVENT TITLE
+========================================= */
+.event-card .event-title {
+    margin: 0;
+    font-family: "Cinzel",serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+/* =========================================
+EVENT DIVIDER
+========================================= */
+.event-divider {
+    position: relative;
+    width: min(320px, 80%);
+    height: 35px;
+    margin: 4px auto 8px;
+    background:
+        url("divider.png")
+        center center /
+        100% auto
+        no-repeat;
+}
+
+/* =========================================
+EVENT DATE
+========================================= */
+.event-card .event-date {
+    margin: 0;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+/* =========================================
+EVENT TIME
+========================================= */
+.event-card .event-time {
+    margin: 8px 0 18px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+/* =========================================
+EVENT LOCATION
+========================================= */
+.event-card .event-location {
+    margin: 0;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* =========================================
+MAP BUTTON
+========================================= */
+.map-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    min-width: 180px;
+    padding: 14px 34px;
+    border: none;
+    border-radius: 999px;
+    background:
+        linear-gradient(
+            180deg,
+            #b37b86,
+            #9e6672
+        );
+    color: #fff;
+    font-family: "Montserrat",sans-serif;
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.map-button:hover {
+    background: 
+        linear-gradient(
+            180deg,
+            #a96f7b,
+            #925c68
+        );
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}

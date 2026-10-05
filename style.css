@@ -1,0 +1,331 @@
+/* =============================
+ROOT
+================================ */
+:root {
+  /* ===== COLOR ===== */
+  --background: #fdf8f5;
+  --background-soft: #f8f3ef;
+  --white: #ffffff;
+  --primary: #8e6b63;
+  --primary-dark: #6e4f49;
+  --secondary: #d7c3b5;
+  --gold: #c5a46d;
+  --text: #4d4d4d;
+  --text-light: #7c7c7c;
+  --border: #ece4dd;
+
+  /* ===== SHADOW ===== */
+  --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+  /* ===== BORDER ===== */
+  --radius-small: 10px;
+  --radius: 18px;
+  --radius-large: 28px;
+
+  /* ===== TRANSITION ===== */
+  --transition: 0.35s ease;
+}
+
+/* =============================
+RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =============================
+CONTAINER
+================================ */
+.container {
+  width: min(100% - 40px, 1080px);
+  margin-inline: auto;
+}
+
+/* =============================
+MAIN LAYOUT
+================================ */
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* =============================
+LEFT SIDE
+================================ */
+.left-side {
+  position: relative;
+  flex: 1;
+  display: flex;
+  background: #ddd url("dekstopbg.png") center / cover no-repeat;
+  overflow: hidden;
+}
+
+/* ---- Overlay ---- */
+.left-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  color: var(--white);
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.18),
+      transparent 60%
+    );
+}
+
+/* ---- Text ---- */
+.left-subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.left-title {
+  margin: 20px 0;
+  font-family: "Pinyon Script", cursive;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.left-title span {
+  display: block;
+  margin: 0.3rem 0;
+  font-size: 3.8rem;
+}
+
+.left-date {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+/* =============================
+RIGHT SIDE
+================================ */
+.right-side {
+  position: relative;
+  flex: 0 0 430px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #e9e9e9;
+  scroll-behavior: smooth;
+}
+
+/* ---- Scrollbar ---- */
+.right-side::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right-side::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 20px;
+}
+
+.right-side::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =============================
+COVER SCROLL LOCK 
+================================ */
+body.cover-active {
+  overflow: hidden;
+}
+
+body.cover-active .right-side {
+  overflow-y: hidden;
+}
+
+/* =============================
+INVITATION CANVAS
+================================ */
+.invitation-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: var(--background);
+  overflow: hidden;
+}
+
+/* =============================
+MUSIC BUTTON
+================================ */
+.music-toggle {
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: var(--primary);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ---- Reveal Animation ---- */
+@keyframes revealMusicButton {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---- Idle Animation ---- */
+@keyframes musicFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ---- Animation Trigger ---- */
+.music-toggle.opened {
+  animation:
+    revealMusicButton 0.8s ease-out 6.6s forwards,
+    musicFloat 3.5s ease-in-out 7.4s infinite;
+}
+
+/* ---- Music Rotation ---- */
+@keyframes rotateMusic {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---- Music Playing ---- */
+.music-toggle i {
+  animation: rotateMusic 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.music-toggle.playing i {
+  animation-play-state: running;
+}
+
+/* =============================
+FORM
+================================ */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: var(--white);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(142, 107, 99, 0.12);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* =============================
+UTILITY
+================================ */
+.hidden {
+  display: none !important;
+}
+
+::placeholder {
+  color: var(--text-light);
+  opacity: 0.8;
+}

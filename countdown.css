@@ -1,0 +1,51 @@
+/* ========================================
+COUNTDOWN SECTION 
+=========================================== */
+/* ----- WRAPPER ---- */
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+/* ---- CARD ---- */
+.count-card {
+  width: 80px;
+  height: 70px;
+  flex: 0 1 80px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transition);
+}
+
+.count-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ---- NUMBER -----*/
+.count-number {
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1;
+}
+
+/* ---- LABEL ---- */
+.count-card span {
+  margin-top: 0.08rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}

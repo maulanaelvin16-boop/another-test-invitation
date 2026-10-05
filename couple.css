@@ -1,0 +1,338 @@
+/* ===================================
+COUPLE SECTION
+====================================== */
+/* ---- Section ---- */
+.couple-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  padding:
+    max(70px, env(safe-area-inset-top))
+    35px
+    max(70px, env(safe-area-inset-bottom));
+}
+
+/* ---- Background ---- */
+.couple-background {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(243, 220, 224, 0.82),
+      rgba(249, 238, 236, 0.84)
+    ),
+    url("background1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* ---- Overlay ---- */
+.couple-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.08)
+    );
+  z-index: 1;
+}
+
+/* ---- Content ---- */
+.couple-content {
+  position: relative;
+  z-index: 5;
+  width: min(100%, 820px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===================================
+COUPLE HEADING
+====================================== */
+.couple-heading {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* ---- Title ---- */
+.couple-title {
+  margin: 0;
+  
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  
+  color: var(--gold);
+}
+
+/* ---- Subtitle ---- */
+.couple-subtitle {
+  margin-top: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 1.4px;
+  color: var(--text-light);
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* ====================================
+PERSON
+======================================= */
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ====================================
+PHOTO FRAME
+======================================= */
+.photo-frame {
+  display: inline-block;
+  position: relative;
+
+  padding: 6px;
+  margin-bottom: 30px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(248, 245, 244, 0.88)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.60);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(193, 154, 107, 0.45);
+  pointer-events: none;
+}
+
+/* ====================================
+PERSON PHOTO
+======================================= */
+.person-photo {
+  display: block;
+
+  width: 230px;
+  height: 330px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* ====================================
+PHOTO HOVER
+======================================= */
+.person:hover .photo-frame {
+  transform:
+    translateY(-4px)
+    scale(1.02);
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+/* ======================================
+PERSON NAME 
+========================================= */
+.person-name {
+  font-family: "Pinyon Script", cursive;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-size: 2.15rem;
+  font-weight: 400;
+  line-height: 0.95;
+  color: var(--primary);
+}
+
+.person-description {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  line-height: 2;
+  letter-spacing: 0.35px;
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+INSTAGRAM BUTTON
+======================================================== */
+.person-instagram {
+  width: 44px;
+  height: 44px;
+  margin-top: 24px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(193, 154, 107, 0.45);
+  color: var(--primary);
+  transition: all 0.35s ease;
+}
+
+.person-instagram i {
+  font-size: 1rem;
+}
+
+.person-instagram:hover {
+  background: rgba(193, 154, 107, 0.12);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ==========================================
+COUPLE DIVIDER 
+============================================= */
+.couple-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 75px 0;
+  font-size: 2.2rem;
+  color: var(--primary);
+  opacity: 0.85;
+}
+
+/* ===========================================
+ORNAMENT OVERRIDE
+============================================== */
+/* ---- Flower Ornament ---- */
+.couple-section .flower-ornament {
+  z-index: 2;
+  opacity: 1;
+}
+
+/* ---- Bottom Left ---- */
+.couple-section .flower-left {
+  width: 68%;
+  left: -30%;
+  bottom: -4%;
+}
+
+/* ---- Bottom Right ---- */
+.couple-section .flower-right {
+  width: 68%;
+  right: 40%;
+  bottom: -4%;
+  transform: scaleX(-1);
+}
+
+/* ---- Bottom Center Left ---- */
+.couple-section .flower-center {
+  width: 64%;
+  left: 46%;
+  margin-left: -42%;
+  bottom: -9%;
+}
+
+/* ---- Bottom Center Right ---- */
+.couple-section .flower-center-second {
+  width: 64%;
+  left: 46%;
+  margin-left: -12%;
+  bottom: -9%;
+  transform: scaleX(-1);
+}
+/* ---- Middle Left ---- */
+.couple-section .flower-middle-left {
+    width: 68%;
+    left: -20%;
+    top: 45%;
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+} 
+
+.couple-section .flower-middle-right {
+    width:68%;
+    right:-10%;
+    top:50%;
+    transform:
+        translateY(-50%)
+        scaleX(-1)
+        rotate(-45deg);
+    opacity:0;
+}
+
+/* ---- Top Left ---- */
+.couple-section .flower-middle-left-upper {
+  top: 25%;
+  left: 0;
+  transform: translateY(-50%) scaleX(-1);
+  opacity: 0;
+}
+
+/* ---- Top Right ---- */
+.couple-section .flower-middle-right-upper {
+  width: 68%;
+  top: 20%;
+  right: -40%;
+  transform: translateY(-50%);
+}
+
+/* =====================================================
+REVEAL
+======================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform .75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====================================================== 
+CASCADE DELAY
+========================================================= */
+.couple-heading {
+  transition-delay: 0ms;
+}
+
+.groom {
+  transition-delay: 600ms;
+}
+
+.couple-divider {
+  transition-delay: 900ms;
+}
+
+.bride {
+  transition-delay: 1200ms;
+}

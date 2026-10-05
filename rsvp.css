@@ -1,0 +1,1008 @@
+/* =================================
+RSVP SECTION
+==================================== */
+.rsvp-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            #e6c6c8,
+            #efd8d9
+        );
+}
+
+.rsvp-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+
+/* =================================
+RSVP PANEL
+==================================== */
+.rsvp-panel {
+  margin-top: 40px;
+  padding: 44px 30px;
+  border-radius: 32px;
+  background:
+    rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.70);
+  position: relative;
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+      opacity 0.8s ease,
+      transform 0.85s
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rsvp-panel::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(191, 154, 95, 0.35);
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rsvp-panel.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rsvp-panel.show::before {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.18s;
+}
+
+/* =================================
+SECTION HEADING
+==================================== */
+.rsvp-section .section-subtitle {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.rsvp-section .section-title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+.rsvp-section .section-description {
+  max-width: 540px;
+  margin: 18px auto 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-light);
+}
+
+
+/* =================================
+FORM LAYOUT
+==================================== */
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 0;
+}
+
+.form-group {
+  position: relative;
+  z-index: 1;
+}
+
+.form-group.active {
+  z-index: 999;
+}
+
+/* =================================
+INPUT
+==================================== */
+.rsvp-form input,
+.rsvp-form textarea,
+.select-display {
+  width: 100%;
+  height: 56px;
+  padding: 0 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(191, 154, 95, 0.22);
+  background:
+    rgba(255, 255, 255, 0.92);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.75);
+}
+
+.rsvp-form textarea {
+  min-height: 150px;
+  padding: 16px 18px;
+  resize: none;
+  line-height: 1.8;
+}
+
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder {
+  color: #999;
+  transition: 0.25s;
+}
+
+.rsvp-form input:focus,
+.rsvp-form textarea:focus,
+.custom-select.open .select-display {
+  border-color: #caa56b;
+  background: #fff;
+  box-shadow:
+    0 0 0 4px rgba(202, 165, 107, 0.16);
+  transform: translateY(-1px);
+}
+
+/* =================================
+SUBMIT BUTTON
+==================================== */
+.rsvp-form .btn {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: "Montserrat",sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff;
+    background:
+        linear-gradient(
+            180deg,
+            #b37b86,
+            #9e6672
+        );
+    box-shadow:
+        0 14px 30px rgba(158, 102, 114, 0.30);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+.rsvp-form .btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 18px 36px rgba(158, 102, 114, 0.40);
+}
+
+.rsvp-form .btn:active {
+  transform: scale(0.97);
+}
+
+.rsvp-form .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+  transform: none;
+  filter: none;
+}
+
+
+
+/* ==========================================
+WISH STATS
+============================================= */
+.wish-stats {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 18px 0 28px;
+  flex-wrap: wrap;
+}
+
+.wish-stats-item {
+  min-width: 88px;
+  background: #fff;
+  border: 1px solid rgba(193, 168, 146, 0.15);
+  border-radius: 14px;
+  padding: 12px 18px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.wish-stats-item span {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.wish-stats-item small {
+  color: #888;
+  font-size: 0.82rem;
+}
+
+.wish-stats-item.hadir span {
+  color: #16a34a;
+}
+
+.wish-stats-item.tidak span {
+  color: #dc2626;
+}
+
+/* ======================================
+SKELETON LOADING
+====================================== */
+.wish-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+.skeleton-card {
+  height: 120px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.skeleton-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+
+  animation: skeletonLoading 1.2s infinite;
+}
+
+@keyframes skeletonLoading {
+
+  100%{
+    transform: translateX(100%);
+  }
+
+}
+
+.wish-skeleton.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.wish-stats-item.pulse {
+  animation: statPulse 0.45s ease;
+}
+
+@keyframes statPulse {
+  0% {
+    transform: scale(1);
+  }
+  
+  35% {
+    transform: scale(1.08);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================
+WEDDING WISHES 
+============================================= */
+.wishes-section {
+  background: #fdf3f4;
+  text-align: center;
+  padding-top: 45px;
+}
+
+.wishes-section .container {
+  max-width: 760px;
+}
+
+.wish-list {
+  font-family: "Montserrat", sans-serif;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 3rem;
+}
+
+/* ========================================
+WISHES HEADING
+=========================================== */
+.wishes-section .section-subtitle {
+  display: block;
+  margin-top: 0;
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.wishes-section .section-title {
+  margin: 30px 0;
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+.wishes-section .section-description {
+  max-width: 540px;
+  margin: 18px auto 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-light);
+}
+
+
+/* CARD UCAPAN */
+.wish-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(193, 168, 146, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+  transition:
+    opacity 0.65s ease,
+    box-shadow 0.35s ease,
+    transform 0.75s cubic-bezier(.22,1,.36,.1),
+    filter 0.65s ease;
+}
+
+.wish-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.wish-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+}
+
+/* NAMA */
+.wish-name {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* STATUS */
+.wish-attendance {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 16px;
+  flex-wrap: wrap;
+  
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+/* ISI UCAPAN */
+.wish-message {
+  color: var(--text);
+  line-height: 1.8rem;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.98rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* WAKTU */
+.wish-time {
+  margin-top: 10px;
+  text-align: right;
+  color: #9b9b9b;
+  font-size: 0.82rem;
+}
+
+.wish-card.show .wish-avatar {
+  animation: avatarPop 0.4s ease .05s both;
+}
+
+@keyframes avatarPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+    box-shadow: none;
+  }
+  
+  70% {
+    transform: scale(1.1);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+}
+
+.wish-card.show .wish-name {
+  animation: fadeUp 0.35s ease 0.12s both;
+}
+
+.wish-card.show .attendance-badge {
+  animation: badgePop 0.35s ease 0.18s both;
+}
+
+.wish-card.show .wish-message {
+  animation: fadeUp 0.4s ease 0.25s both;
+}
+
+.wish-card.show .wish-time {
+  animation: fadeUp 0.35s ease 0.35s both;
+}
+/* =======================================
+GUEST COUNT WRAPPER
+========================================== */
+.guest-count-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-6px) scale(0.985);
+  transition:
+  max-height 0.35s ease,
+  opacity 0.28s ease,
+  transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+  margin 0.35s ease;
+}
+
+.guest-count-wrapper.show {
+  max-height: 100px;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  margin-top: 1rem;
+}
+
+/* ========================================
+SUBMIT SPINNER
+=========================================== */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===============================================
+SUCCESS ICON
+================================================== */
+.success-icon {
+  color: #ffffff;
+  animation: successPop 0.35s ease;
+}
+
+@keyframes successPop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===============================================
+TOAST NOTIFICATION
+================================================== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%) translateY(30px);
+  background: rgba(40, 40, 40, 0.95);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-medium);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =====================================================
+ATTENDANCE BADGE 
+======================================================== */
+.attendance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transform: scale(.85);
+  opacity: 0;
+  animation: badgePop 0.45s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes badgePop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.attendance-badge.hadir {
+  background : rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.attendance-badge.tidak-hadir {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.guest-total {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: #8a8a8a;
+  font-weight: 500;
+}
+
+/* ===========================================
+HEADER
+============================================== */
+.wish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.wish-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* =======================================
+USER
+========================================== */
+.wish-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wish-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.wish-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wish-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+/* =====================================
+NEW WISH HIGHLIGHT
+======================================== */
+.wish-card.highlight {
+  animation: cardHighlight 1.4s ease;
+}
+
+@keyframes cardHighlight {
+  0% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  35% {
+    box-shadow: 
+    0 0 18px rgba(212, 175, 55, 0.16),
+    0 12px 28px rgba(212, 175, 55, 0.18);
+  }
+  
+  100% {
+    box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* ===================================
+ICON CSS
+====================================== */
+.guest-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ===============================================
+CUSTOM SELECT
+================================================== */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+/* =================================
+SELECT DISPLAY
+==================================== */
+.select-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+  border-radius: 16px;
+  border: 1px solid rgba(191, 154, 95, 0.22);
+  background:
+    rgba(255, 255, 255, 0.92);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.custom-select.open .select-display {
+  background: #fff;
+  border-color: #caa56b;
+  box-shadow:
+    0 0 0 4px rgba(202, 165, 107, 0.16);
+  transform: translateY(-1px);
+}
+
+.select-display:hover {
+  border-color: var(--primary);
+}
+
+.select-text {
+  color: #999;
+  line-height: 1;
+}
+
+.select-text.selected {
+  color: var(--text);
+}
+
+.select-arrow {
+  width: 18px;
+  height: 18px;
+  color: #9b8a73;
+  transition:
+    transform 0.35s ease,
+    color 0.25s ease;
+}
+
+.custom-select.open .select-arrow {
+  color: var(--gold);
+  transform: rotate(180deg);
+}
+
+.select-options {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(191, 154, 95, 0.18);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.10);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease,
+    visibility 0.28s ease;
+  z-index: 100;
+}
+
+.custom-select.open .select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.select-option {
+  padding: 16px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.92rem;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.select-option:hover {
+  background: #f9f3ed;
+  color: var(--primary);
+  padding-left: 26px;
+} 
+
+.select-option.selected {
+  background:
+    rgba(191, 154, 95, 0.10);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.rsvp-form input.error,
+.rsvp-form textarea.error,
+.custom-select.error .select-display {
+  border-color: #df5a5a;
+  box-shadow:
+    0 0 0 4px rgba(223, 90, 90, 0.12);
+}
+
+.custom-select .select-arrow {
+  transition: 0.35s;
+}
+
+/* ===================================================
+HILANGKAN HIGHLIGHT BAWAAN CHROME
+====================================================== */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select,
+.custom-select,
+.select-option,
+a {
+-webkit-tap-highlight-color: transparent;
+outline: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+.custom-select:focus {
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+.custom-select.open .select-display {
+  transform: translateY(-1px);
+}
+
+/* Efek Hover */
+@media (hover:hover) {
+  button:hover{
+    transform: translateY(-2px);
+  }
+  
+  .select-option:hover {
+    background: #f8f4ef;
+  }
+}
+
+.form-error {
+  display: block;
+  margin-top: 8px;
+  margin-left: 4px;
+  text-align: left;
+  color: #df5a5a;
+  font-size: 0.78rem;
+}
+
+.form-error.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes shake {
+  0%,100%{
+    transform:translateX(0);
+  }
+  
+  25%{
+    transform: translateX(-4px);
+  }
+  
+  75%{
+    transform: translateX(4px);
+  }
+}
+
+.error {
+  animation:shake 0.25s;
+}
+
+/* ======================================
+SEE / CLOSE ALL WISHES
+========================================= */
+.wish-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.toggle-wishes {
+  padding: 12px 22px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 999px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  background:
+        linear-gradient(
+            180deg,
+            #b37b86,
+            #9e6672
+        );
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.toggle-wishes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-wishes.hidden {
+  display: none;
+}
+
+/* =================================
+FORM STAGGER ANIMATION
+==================================== */
+.rsvp-form>* {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rsvp-panel.show .rsvp-form>* {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay setiap elemen */
+.rsvp-panel.show .rsvp-form>*:nth-child(1) {
+  transition-delay: 0.12s;
+}
+
+.rsvp-panel.show .rsvp-form>*:nth-child(2) {
+  transition-delay: 0.20s;
+}
+
+.rsvp-panel.show .rsvp-form>*:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+.rsvp-panel.show .rsvp-form>*:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+.rsvp-panel.show .rsvp-form>*:nth-child(5) {
+  transition-delay: 0.44s;
+}
+
+.rsvp-panel.show .rsvp-form>*:nth-child(6) {
+  transition-delay: 0.52s;
+}
