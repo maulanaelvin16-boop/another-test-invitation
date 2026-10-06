@@ -103,7 +103,7 @@ LEFT SIDE
   position: relative;
   flex: 1;
   display: flex;
-  background: #ddd url("dekstopbg.webp") center / cover no-repeat;
+  background: #ddd url("dekstopbg.webp") 2% 35% / cover no-repeat;
   overflow: hidden;
 }
 
@@ -131,7 +131,7 @@ LEFT SIDE
   font-size: 0.95rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--white);
 }
 
 .left-title {
@@ -140,7 +140,7 @@ LEFT SIDE
   font-size: 5rem;
   font-weight: 400;
   line-height: 1.1;
-  color: var(--gold);
+  color: var(--white);
 }
 
 .left-title span {
