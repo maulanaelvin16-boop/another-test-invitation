@@ -103,7 +103,7 @@ LEFT SIDE
   position: relative;
   flex: 1;
   display: flex;
-  background: #ddd url("dekstopbg.png") center / cover no-repeat;
+  background: #ddd url("dekstopbg.webp") center / cover no-repeat;
   overflow: hidden;
 }
 
