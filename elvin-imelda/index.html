@@ -24,8 +24,16 @@
 </head>
 <body>
   <iframe
-    src="https://melvininvitation.my.id/"
+    id="invitation"
     title="Undangan Pernikahan Elvin dan Imelda">
   </iframe>
+
+  <script>
+    const params = window.location.search;
+    const hash = window.location.hash;
+
+    document.getElementById("invitation").src =
+      "https://melvininvitation.my.id/" + params + hash;
+  </script>
 </body>
 </html>
